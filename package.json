@@ -1,0 +1,45 @@
+{
+  "name": "supertest",
+  "version": "0.0.1",
+  "description": "supertest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AustinRF2918/SuperTestLite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustinRF2918/SuperTestLite/issues"
+  },
+  "homepage": "https://github.com/AustinRF2918/SuperTestLite#readme",
+  "devDependencies": {
+    "can-hot": "^0.1.8",
+    "can-route": "^3.0.11",
+    "can-route-pushstate": "^3.0.3",
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.0",
+    "steal": "^1.5.2",
+    "steal-css": "^1.2.4",
+    "steal-tools": "^1.3.5"
+  },
+  "steal": {
+    "plugins": [
+      "steal-stache",
+      "steal-css"
+    ]
+  },
+  "dependencies": {
+    "can-component": "^3.0.7",
+    "can-define": "^1.0.26",
+    "can-route": "^3.0.11",
+    "can-stache": "^3.0.27",
+    "pushstate-server": "^3.0.0",
+    "steal-stache": "^3.0.7"
+  }
+}

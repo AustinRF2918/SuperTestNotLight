@@ -1,0 +1,7 @@
+<li {{#if showing}}class="sidebar-item dont-hide"{{else}}class="sidebar-item super-hide"{{/if}}>
+    <a href="javaScript:void(0)">{{#if icon}}<i class={{getClassName()}}></i>{{/if}} {{name}}<span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level">
+      <content/>
+    </ul>
+</li>
+

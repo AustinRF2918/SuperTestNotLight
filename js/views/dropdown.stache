@@ -1,0 +1,12 @@
+<div class="dropdown show">
+  <a class="btn btn-secondary btn-material dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{name}}
+  </a>
+  <div {{#if isLeft()}}class="dropdown-menu dropdown-align-left"{{/if}}
+       {{#if isCenter()}}class="dropdown-menu dropdown-align-center"{{/if}}
+       {{#if isRight()}}class="dropdown-menu dropdown-align-right"{{/if}}>
+    <ul class="nav">
+      <content/>
+    </ul>
+  </div>
+</div>

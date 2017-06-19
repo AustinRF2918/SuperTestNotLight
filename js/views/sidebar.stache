@@ -1,0 +1,10 @@
+<nav class="sidebar-container" role="navigation">
+    <div class="navbar-default sidebar" role="navigation" style="margin-top: 0px !important">
+      <div class="sidebar-nav navbar-collapse">
+	<content/>
+      </div>
+	<!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
+

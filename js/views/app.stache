@@ -1,0 +1,182 @@
+<div class="container-fluid">
+    <navigation-bar name={name}
+                    version={version}>
+      <navigation-item nested=true icon="tasks" name="tests">
+	<test-result title="It can do that."
+		     when="1 Day Ago"
+		     feature="batchjob.feature"
+		     status="success"
+		     branch="DCENTRAL-1100"/>
+
+	<test-result title="It can do This."
+		     when="2 Day Ago"
+		     feature="batchjob.feature"
+		     status="failure"
+		     branch="DCENTRAL-1100"/>
+      </navigation-item>
+
+      <navigation-item nested=true icon="envelope" name="messages">
+	<test-result title="It can do that."
+		     when="1 Day Ago"
+		     feature="batchjob.feature"
+		     status="success"
+		     branch="DCENTRAL-1100"/>
+
+	<test-result title="It can do This."
+		     when="2 Day Ago"
+		     feature="batchjob.feature"
+		     status="failure"
+		     branch="DCENTRAL-1100"/>
+      </navigation-item>
+
+      <navigation-item nested=true icon="bell" name="alerts">
+	<test-result title="It can do that."
+		     when="1 Day Ago"
+		     feature="batchjob.feature"
+		     status="success"
+		     branch="DCENTRAL-1100"/>
+
+	<test-result title="It can do This."
+		     when="2 Day Ago"
+		     feature="batchjob.feature"
+		     status="failure"
+		     branch="DCENTRAL-1100"/>
+      </navigation-item>
+      <navigation-item ($click)="router.setCurrentPage('configuration.user')" nested=false icon="user" name="user"/>
+    </navigation-bar>
+
+<div class="under-container">
+<side-bar currentSearch="">
+    <ul class="nav" id="side-menu">
+	<li class="sidebar-search">
+	    <div class="input-group custom-search-form">
+		<input ($keyup)="updateCurrentSearch(%element)" type="text" class="form-control" placeholder="Filter Pages...">
+	    </div>
+	    <!-- /input-group -->
+	</li>
+
+	<side-bar-item
+	    ($click)="router.setCurrentPage('home')"
+	    showing={{fuzzyMatch("Home", currentSearch)}}
+	    icon="home"
+	    name="Home"/>
+
+	<side-bar-dropdown
+	  showing={{fuzzyMatch("features", currentSearch)}}
+	  name="Features"
+	  icon="support">
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('features.batchjob')"
+	    showing=true
+	    name="Batchjob"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('features.programs')"
+	    showing=true
+	    name="Programs"/>
+	</side-bar-dropdown>
+
+	<side-bar-item
+	    showing={{fuzzyMatch("scenarios", currentSearch)}}
+	    ($click)="router.setCurrentPage('scenarios')"
+	    icon="table"
+	    name="Scenarios"/>
+
+	<side-bar-item
+	    showing={{fuzzyMatch("steps", currentSearch)}}
+	    ($click)="router.setCurrentPage('steps')"
+	    icon="step-forward"
+	    name="Steps"/>
+
+	<side-bar-dropdown
+	  showing={{fuzzyMatch("sklaven", currentSearch)}}
+	  name="Sklaven"
+	  icon="server">
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('sklaven.1')"
+	    showing=true
+	    name="Sklave 1"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('sklaven.2')"
+	    showing=true
+	    name="Sklave 2"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('sklaven.3')"
+	    showing=true
+	    name="Sklave 3"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('sklaven.4')"
+	    showing=true
+	    name="Sklave 4"/>
+	</side-bar-dropdown>
+
+	<side-bar-dropdown
+	  showing={{fuzzyMatch("branches", currentSearch)}}
+	  name="Branches"
+	  icon="sitemap">
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('branches.DCENTRAL-1100')"
+	    showing=true
+	    name="DCENTRAL-1100"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('branches.DCENTRAL-1200')"
+	    showing=true
+	    name="DCENTRAL-1200"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('branches.DCENTRAL-1300')"
+	    showing=true
+	    name="DCENTRAL-1300"/>
+	</side-bar-dropdown>
+
+	<side-bar-dropdown
+	  showing={{fuzzyMatch("configuration", currentSearch)}}
+	  name="Configuration"
+	  icon="wrench">
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('configuration.user')"
+	    showing=true
+	    name="User"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('configuration.runners')"
+	    showing=true
+	    name="Runners"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('configuration.versioning')"
+	    showing=true
+	    name="Version Control"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentPage('configuration.JIRA')"
+	    showing=true
+	    name="JIRA"/>
+	</side-bar-dropdown>
+      </ul>
+</side-bar>
+<div class="application-container">
+  <div class="current-branch-view">
+    <div class="current-branch-view-left">
+      <drop-down name={{router.getCurrentBranch()}} direction="right">
+	<side-bar-item
+	    ($click)="router.setCurrentBranch('Master')"
+	    showing=true
+	    name="Master"/>
+	<side-bar-item
+	    ($click)="router.setCurrentBranch('DCENTRAL-1100')"
+	    showing=true
+	    name="DCENTRAL-1100"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentBranch('DCENTRAL-1200')"
+	    showing=true
+	    name="DCENTRAL-1200"/>
+	  <side-bar-item
+	    ($click)="router.setCurrentBranch('DCENTRAL-1300')"
+	    showing=true
+	    name="DCENTRAL-1300"/>
+      </drop-down>
+    </div>
+    <div class="current-branch-view-right">
+      <p style="color: #777;">Branch {{router.getCurrentBranch()}} is currently clean.</p>
+    </div>
+  </div>
+  <content-view
+    currentPage={{router.getCurrentPage()}}/>
+
+</div>

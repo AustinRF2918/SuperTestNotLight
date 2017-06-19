@@ -1,0 +1,13 @@
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-{{icon}} fa-fw"></i>
+      {{#if nested}}
+	<i class="fa fa-caret-down"></i>
+      {{/if}}
+    </a>
+    {{#if nested}}
+      <ul class="dropdown-menu dropdown-{{name}}">
+	<content/>
+      </ul>
+    {{/if}}
+</li>
